@@ -1,15 +1,3 @@
-  function removeAssignment(assignmentId) {
-    setAssignments(prev => {
-      const next = prev.filter(a => a.id !== assignmentId)
-      try { localStorage.setItem('assignments', JSON.stringify(next)) } catch (e) {}
-      return next
-    })
-    setSubmissions(prev => {
-      const next = prev.filter(s => s.assignmentId !== assignmentId)
-      try { localStorage.setItem('submissions', JSON.stringify(next)) } catch (e) {}
-      return next
-    })
-  }
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { assignments as mockAssignments, submissions as mockSubmissions, users as mockUsers } from '../data/mockData'
 import { v4 as uuidv4 } from 'uuid'
@@ -86,6 +74,19 @@ export function DataProvider({ children }) {
     if (!studentId) return
     setSubmissions(prev => {
       const next = prev.filter(s => s.studentId !== studentId)
+      try { localStorage.setItem('submissions', JSON.stringify(next)) } catch (e) {}
+      return next
+    })
+  }
+
+  function removeAssignment(assignmentId) {
+    setAssignments(prev => {
+      const next = prev.filter(a => a.id !== assignmentId)
+      try { localStorage.setItem('assignments', JSON.stringify(next)) } catch (e) {}
+      return next
+    })
+    setSubmissions(prev => {
+      const next = prev.filter(s => s.assignmentId !== assignmentId)
       try { localStorage.setItem('submissions', JSON.stringify(next)) } catch (e) {}
       return next
     })
