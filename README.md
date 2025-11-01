@@ -4,6 +4,9 @@ A lightweight, frontend-only React application (Vite + Tailwind CSS) for managin
 
 This README documents the app's purpose, features, key functions and files, data model, security notes (frontend-only PIN lock), and steps to run the project locally on Windows PowerShell.
 
+### Working Link
+https://assignment-dashboard-chi-orcin.vercel.app/
+
 ## Features
 
 - Two roles: `admin` and `student`.
