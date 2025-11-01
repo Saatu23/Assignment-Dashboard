@@ -1,7 +1,7 @@
 export const users = [
-  { id: 'u1', name: 'Dr. Alan Grant', role: 'admin' },
-  { id: 'u2', name: 'Ellie Sattler', role: 'student' },
-  { id: 'u3', name: 'Ian Malcolm', role: 'student' },
+  { id: 'u1', name: 'Dr. Harry Potter', role: 'admin' },
+  { id: 'u2', name: 'Satyam', role: 'student' },
+  { id: 'u3', name: 'Shivam', role: 'student' },
 ]
 
 export const assignments = [

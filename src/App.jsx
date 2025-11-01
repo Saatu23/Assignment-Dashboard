@@ -35,7 +35,7 @@ export default function App() {
             className="border rounded p-2"
           >
             {users.map(u => (
-              <option key={u.id} value={u.id}>{u.name} {isLocked(u.id) ? '🔒' : ''} — {u.role}</option>
+              <option key={u.id} value={u.id}>{u.name} {isLocked(u.id) ? '🔒' : ''} - {u.role}</option>
             ))}
           </select>
           {/* Lock/Unlock button for current user */}
