@@ -42,20 +42,20 @@ export default function StudentList({ onClose }) {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
-      <div className="bg-white w-full max-w-2xl rounded shadow p-4">
-        <div className="flex items-center justify-between mb-3">
+      <div className="bg-white w-full max-w-2xl rounded shadow p-4 sm:p-6">
+        <div className="flex items-start sm:items-center justify-between mb-3 flex-wrap gap-3">
           <h3 className="text-lg font-semibold">Student List</h3>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center flex-wrap gap-2">
             {showAdd ? (
-              <div className="flex items-center space-x-2">
-                <input className="border p-1 rounded px-2" placeholder="Student name" value={newName} onChange={e=>setNewName(e.target.value)} />
-                <button onClick={handleAdd} disabled={!newName.trim()} className={`px-3 py-1 rounded text-sm ${newName.trim() ? 'bg-green-600 text-white' : 'bg-green-200 text-green-800 cursor-not-allowed'}`}>Add</button>
-                <button onClick={() => { setShowAdd(false); setNewName('') }} className="px-3 py-1 border rounded text-sm">Cancel</button>
+              <div className="flex items-center flex-wrap gap-2">
+                <input className="border p-1 rounded px-2 text-sm" placeholder="Student name" value={newName} onChange={e=>setNewName(e.target.value)} />
+                <button onClick={handleAdd} disabled={!newName.trim()} className={`px-2 sm:px-3 py-1 rounded text-sm ${newName.trim() ? 'bg-green-600 text-white' : 'bg-green-200 text-green-800 cursor-not-allowed'}`}>Add</button>
+                <button onClick={() => { setShowAdd(false); setNewName('') }} className="px-2 sm:px-3 py-1 border rounded text-sm">Cancel</button>
               </div>
             ) : (
-              <button onClick={() => setShowAdd(true)} className="px-3 py-1 bg-green-600 text-white rounded text-sm">Add Student</button>
+              <button onClick={() => setShowAdd(true)} className="px-2 sm:px-3 py-1 bg-green-600 text-white rounded text-sm">Add Student</button>
             )}
-            <button onClick={onClose} className="px-3 py-1 border rounded text-sm">Close</button>
+            <button onClick={onClose} className="px-2 sm:px-3 py-1 border rounded text-sm">Close</button>
           </div>
         </div>
 

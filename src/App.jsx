@@ -15,7 +15,7 @@ export default function App() {
       <header className="max-w-6xl mx-auto mb-6 flex items-center justify-between">
         <h1 className="text-2xl font-semibold">Assignment & Review Dashboard</h1>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 flex-wrap gap-2">
           <label className="text-sm text-gray-600">Switch User</label>
           <select
             value={currentUser?.id}
@@ -32,7 +32,7 @@ export default function App() {
               }
               setCurrentUserId(selectedId);
             }}
-            className="border rounded p-2"
+            className="border rounded p-2 text-sm"
           >
             {users.map(u => (
               <option key={u.id} value={u.id}>{u.name} {isLocked(u.id) ? '🔒' : ''} - {u.role}</option>
@@ -65,7 +65,7 @@ export default function App() {
                 }
               }
             }}
-            className="ml-2 px-3 py-1 border rounded text-sm"
+            className="ml-2 px-2 sm:px-3 py-1 border rounded text-sm"
             title={isLocked(currentUser.id) ? 'Unlock your profile' : 'Lock your profile'}
           >
             {isLocked(currentUser.id) ? 'Unlock Profile' : 'Lock Profile'}
@@ -79,11 +79,11 @@ export default function App() {
                   location.reload()
                 }
               }}
-              className="ml-4 px-3 py-1 border rounded text-sm"
+              className="ml-4 ml:0 px-2 sm:px-3 py-1 border rounded text-sm"
             >Reset Data</button>
           )}
           {currentUser?.role === 'admin' && (
-            <button onClick={() => setShowStudentList(true)} className="ml-2 px-3 py-1 border rounded text-sm">Student List</button>
+            <button onClick={() => setShowStudentList(true)} className="ml-2 px-2 sm:px-3 py-1 border rounded text-sm">Student List</button>
           )}
         </div>
       </header>
